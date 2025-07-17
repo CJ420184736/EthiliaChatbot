@@ -1,4 +1,5 @@
 # This project was generated with 0.3.24 using template: https://github.com/beeware/briefcase-template @ v0.3.24
+
 [tool.briefcase]
 project_name = "Ethilia"
 bundle = "com.ethilia"
@@ -12,7 +13,7 @@ license = "MIT"
 [tool.briefcase.app.ethilia]
 formal_name = "Ethilia"
 description = "The Ethilia chatbot"
-sources = ['ethilia']
+sources = ["ethilia"]
 icon = "icons"
 version = "1.0.0"
 bundle = "com.ethilia"
@@ -30,6 +31,10 @@ requires = ["toga-winforms"]
 
 [tool.briefcase.app.ethilia.android]
 requires = ["toga-android"]
+build_targets = ["armeabi-v7a", "arm64-v8a"]
+support_package = "org.beeware.android"
+target_sdk = 33
+gradle = true
 
 [build-system]
 requires = ["briefcase"]
