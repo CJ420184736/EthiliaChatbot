@@ -13,4 +13,4 @@ workflows:
       - name: Package APK
         script: briefcase package android
     artifacts:
-      - '**/*.apk'
+      - build/ethilia/android/*.apk
