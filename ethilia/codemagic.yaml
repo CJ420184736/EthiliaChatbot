@@ -1,0 +1,21 @@
+workflows:
+  build-ethilia:
+    name: Build Ethilia APK
+    environment:
+      vars:
+        BRIEFCASE_PLATFORM: android
+      sdk: "20.04"
+      android:
+        sdk_path: "/opt/android-sdk"
+    scripts:
+      - name: Install Python and Briefcase
+        script: |
+          pip install --upgrade pip
+          pip install briefcase
+      - name: Build APK with Briefcase
+        script: |
+          cd ethilia
+          briefcase build android
+          briefcase package android
+    artifacts:
+      - ethilia/android/*.apk

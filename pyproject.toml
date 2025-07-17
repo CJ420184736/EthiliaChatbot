@@ -1,0 +1,32 @@
+# This project was generated with 0.3.24 using template: https://github.com/beeware/briefcase-template @ v0.3.24
+[tool.briefcase]
+project_name = "Ethilia"
+bundle = "com.ethilia"
+version = "0.0.1"
+description = "A simple AI chat app powered by Ethilia."
+author = "CJ"
+author_email = "getfukd4269@gmail.com"
+url = "https://github.com/CJ420184736/Ethilia"
+license = "MIT"
+
+[tool.briefcase.app.ethilia]
+formal_name = "Ethilia"
+description = "A simple Toga app that talks like Ethilia."
+source = "src/ethilia"
+entry_point = "app:main"
+
+[tool.briefcase.app.ethilia.macOS]
+requires = ["toga-cocoa"]
+
+[tool.briefcase.app.ethilia.linux]
+requires = ["toga-gtk"]
+
+[tool.briefcase.app.ethilia.windows]
+requires = ["toga-winforms"]
+
+[tool.briefcase.app.ethilia.android]
+requires = ["toga-android"]
+
+[build-system]
+requires = ["briefcase"]
+build-backend = "briefcase.build"

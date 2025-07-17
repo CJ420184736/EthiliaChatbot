@@ -1,0 +1,16 @@
+workflows:
+  build_ethilia_apk:
+    name: Build Ethilia APK
+    max_build_duration: 30
+    environment:
+      vars:
+        BRIEFCASE_PLATFORM: android
+    scripts:
+      - name: Install Briefcase
+        script: pip install -U briefcase
+      - name: Build APK
+        script: cd ethilia/ethilia && briefcase build android
+      - name: Package APK
+        script: cd ethilia/ethilia && briefcase package android
+    artifacts:
+      - ethilia/ethilia/android/app/build/outputs/apk/**/*.apk
