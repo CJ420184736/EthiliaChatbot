@@ -11,9 +11,13 @@ license = "MIT"
 
 [tool.briefcase.app.ethilia]
 formal_name = "Ethilia"
-description = "A simple Toga app that talks like Ethilia."
-source = "src/ethilia"
-entry_point = "app:main"
+description = "The Ethilia chatbot"
+sources = ['ethilia']
+icon = "icons"
+version = "1.0.0"
+bundle = "com.ethilia"
+package = "ethilia"
+app_name = "ethilia"
 
 [tool.briefcase.app.ethilia.macOS]
 requires = ["toga-cocoa"]
