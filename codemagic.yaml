@@ -9,8 +9,8 @@ workflows:
       - name: Install Briefcase
         script: pip install -U briefcase
       - name: Build APK
-        script: cd ethilia/ethilia && briefcase build android
+        script: briefcase build android
       - name: Package APK
-        script: cd ethilia/ethilia && briefcase package android
+        script: briefcase package android
     artifacts:
-      - ethilia/ethilia/android/app/build/outputs/apk/**/*.apk
+      - android/app/build/outputs/**/*.apk
