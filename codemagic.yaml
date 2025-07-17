@@ -8,9 +8,9 @@ workflows:
     scripts:
       - name: Install Briefcase
         script: pip install -U briefcase
-      - name: Build APK
+      - name: Build App
         script: briefcase build android
       - name: Package APK
         script: briefcase package android
     artifacts:
-      - android/app/build/outputs/**/*.apk
+      - '**/*.apk'
