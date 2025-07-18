@@ -6,7 +6,6 @@ workflows:
     environment:
       vars:
         BRIEFCASE_ANDROID_ABIS: armeabi-v7a
-      android:
     scripts:
       - name: Install dependencies
         script: |
