@@ -18,6 +18,7 @@ workflows:
       - name: Package Android APK
         script: briefcase package android
     artifacts:
+      - "dist/*.aab"
       - "dist/*.apk"
     publishing:
       email:
