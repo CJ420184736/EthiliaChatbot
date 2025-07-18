@@ -19,7 +19,7 @@ version = "1.0.0"
 bundle = "com.ethilia"
 package = "ethilia"
 app_name = "ethilia"
-requires = ["toga"]
+requires = ["toga-android"]
 
 [tool.briefcase.app.ethilia.android]
 requires = ["toga-android"]
