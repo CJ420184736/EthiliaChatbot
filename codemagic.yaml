@@ -1,28 +1,27 @@
 # codemagic.yaml
 
 workflows:
-  build_ethilia_apk:
-    name: Build Ethilia Android APK
+  build-ethilia-apk:
+    name: Build Ethilia APK (32-bit)
     environment:
       vars:
-        BRIEFCASE_PLATFORM: "android"
+        BRIEFCASE_ANDROID_ABIS: armeabi-v7a
+      android:
+        java: 17
     scripts:
-      - name: Install Briefcase
+      - name: Install dependencies
         script: |
+          pip install --upgrade pip
           pip install briefcase
-
-      - name: Build APK
-        script: |
-          briefcase create android
-          briefcase build android
-
+      - name: Create Android project
+        script: briefcase create android
+      - name: Build Android project
+        script: briefcase build android
+      - name: Package Android APK
+        script: briefcase package android
     artifacts:
-      - "**/outputs/**/*.apk"
-
+      - "dist/*.apk"
     publishing:
       email:
         recipients:
-          - getfukd4269@gmail.com
-        notify:
-          success: true
-          failure: true
+          - "getfukd4269@gmail.com"
