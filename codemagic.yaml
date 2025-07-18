@@ -6,17 +6,19 @@ workflows:
     environment:
       vars:
         BRIEFCASE_PLATFORM: "android"
-    scripts:
-      - name: Clean Briefcase build
-        script: |
-          briefcase clean android
-      - name: Install Briefcase
-        script: |
-          pip install briefcase
-      - name: Build APK
-        script: |
-          briefcase create android
-          briefcase build android
+scripts:
+  - name: Install Briefcase
+    script: |
+      pip install briefcase
+
+  - name: Clean Briefcase build
+    script: |
+      briefcase clean android
+
+  - name: Build APK
+    script: |
+      briefcase create android
+      briefcase build android
     artifacts:
       - .ethilia/android/gradle/app/build/outputs/apk/debug/app-debug.apk
     publishing:
