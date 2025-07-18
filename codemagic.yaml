@@ -1,7 +1,7 @@
 # codemagic.yaml
 
 workflows:
-  build-ethilia-apk:
+  build_ethilia_apk:
     name: Build Ethilia APK (32-bit)
     environment:
       vars:
