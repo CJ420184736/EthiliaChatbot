@@ -1,26 +1,28 @@
 # codemagic.yaml
 
 workflows:
-  build_ethilia_apk:   # ✅ change dash to underscore
+  build_ethilia_apk:
     name: Build Ethilia Android APK
     environment:
       vars:
         BRIEFCASE_PLATFORM: "android"
-scripts:
-  - name: Install Briefcase
-    script: |
-      pip install briefcase
+    scripts:
+      - name: Install Briefcase
+        script: |
+          pip install briefcase
 
-  - name: Clean Briefcase build
-    script: |
-      briefcase clean android
+      - name: Clean Briefcase build
+        script: |
+          briefcase clean android
 
-  - name: Build APK
-    script: |
-      briefcase create android
-      briefcase build android
-artifacts:
-  - "**/app-debug.apk"
+      - name: Build APK
+        script: |
+          briefcase create android
+          briefcase build android
+
+    artifacts:
+      - "**/app-debug.apk"
+
     publishing:
       email:
         recipients:
