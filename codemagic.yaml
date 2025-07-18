@@ -1,16 +1,29 @@
+# codemagic.yaml
+
 workflows:
-  build_ethilia_apk:
-    name: Build Ethilia APK
-    max_build_duration: 30
+  build-ethilia-apk:
+    name: Build Ethilia Android APK
     environment:
-      vars:
-        BRIEFCASE_PLATFORM: android
+      flutter: false
+      xcode: false
+      android: true
     scripts:
+      - name: Clean Briefcase build
+        script: |
+          briefcase clean android
       - name: Install Briefcase
-        script: pip install -U briefcase
-      - name: Build App
-        script: briefcase build android
-      - name: Package APK
-        script: briefcase package android
+        script: |
+          pip install briefcase
+      - name: Build APK
+        script: |
+          briefcase create android
+          briefcase build android
     artifacts:
-      - build/ethilia/android/*.apk
+      - .ethilia/android/gradle/app/build/outputs/apk/debug/app-debug.apk
+    publishing:
+      email:
+        recipients:
+          - getfukd4269@gmail.com
+        notify:
+          success: true
+          failure: true
