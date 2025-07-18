@@ -4,9 +4,8 @@ workflows:
   build-ethilia-apk:
     name: Build Ethilia Android APK
     environment:
-      flutter: false
-      xcode: false
-      android: true
+      vars:
+        BRIEFCASE_PLATFORM: "android"
     scripts:
       - name: Clean Briefcase build
         script: |

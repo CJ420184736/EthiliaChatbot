@@ -19,16 +19,7 @@ version = "1.0.0"
 bundle = "com.ethilia"
 package = "ethilia"
 app_name = "ethilia"
-requires = ["toga"]  # ✅ ONLY toga — REMOVE openai
-
-[tool.briefcase.app.ethilia.macOS]
-requires = ["toga-cocoa"]
-
-[tool.briefcase.app.ethilia.linux]
-requires = ["toga-gtk"]
-
-[tool.briefcase.app.ethilia.windows]
-requires = ["toga-winforms"]
+requires = ["toga"]
 
 [tool.briefcase.app.ethilia.android]
 requires = ["toga-android"]
