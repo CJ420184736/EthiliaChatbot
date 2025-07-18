@@ -1,24 +1,25 @@
-# This project was generated with 0.3.24 using template: https://github.com/beeware/briefcase-template @ v0.3.24
+# pyproject.toml
 
 [tool.briefcase]
 project_name = "Ethilia"
 bundle = "com.ethilia"
-version = "0.0.1"
+version = "1.0.0"
 description = "A simple AI chat app powered by Ethilia."
 author = "CJ"
 author_email = "getfukd4269@gmail.com"
-url = "https://github.com/CJ420184736/Ethilia"
-license = "MIT"
+url = "https://github.com/CJ420184736/EthiliaChatbot"
+license = { file = "LICENSE" }
 
 [tool.briefcase.app.ethilia]
 formal_name = "Ethilia"
 description = "The Ethilia chatbot"
-sources = ["ethilia"]
+sources = ["ethilia/ethilia"]
 icon = "icons"
 version = "1.0.0"
 bundle = "com.ethilia"
 package = "ethilia"
 app_name = "ethilia"
+requires = ["toga", "openai"]
 
 [tool.briefcase.app.ethilia.macOS]
 requires = ["toga-cocoa"]
@@ -31,10 +32,8 @@ requires = ["toga-winforms"]
 
 [tool.briefcase.app.ethilia.android]
 requires = ["toga-android"]
-build_targets = ["armeabi-v7a", "arm64-v8a"]
-support_package = "org.beeware.android"
+android_arch = ["armeabi-v7a", "arm64-v8a"]
 target_sdk = 33
-gradle = true
 
 [build-system]
 requires = ["briefcase"]
