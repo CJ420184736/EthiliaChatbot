@@ -19,8 +19,8 @@ scripts:
     script: |
       briefcase create android
       briefcase build android
-    artifacts:
-      - .ethilia/android/gradle/app/build/outputs/apk/debug/app-debug.apk
+artifacts:
+  - "**/app-debug.apk"
     publishing:
       email:
         recipients:
