@@ -23,8 +23,8 @@ requires = ["toga-android"]
 
 [tool.briefcase.app.ethilia.android]
 requires = ["toga-android"]
-android_arch = ["armeabi-v7a"]  # ✅ 32-bit ARM ONLY
-target_sdk = 33
+android_arch = ["armeabi-v7a"]
+target_sdk = 30
 
 [build-system]
 requires = ["briefcase"]
