@@ -1,7 +1,7 @@
 # codemagic.yaml
 
 workflows:
-  build-ethilia-apk:
+  build_ethilia_apk:   # ✅ change dash to underscore
     name: Build Ethilia Android APK
     environment:
       vars:
