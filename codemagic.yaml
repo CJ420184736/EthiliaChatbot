@@ -11,17 +11,13 @@ workflows:
         script: |
           pip install briefcase
 
-      - name: Clean Briefcase build
-        script: |
-          briefcase clean android
-
       - name: Build APK
         script: |
           briefcase create android
           briefcase build android
 
     artifacts:
-      - "**/app-debug.apk"
+      - "**/outputs/**/*.apk"
 
     publishing:
       email:
