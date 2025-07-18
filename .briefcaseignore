@@ -1,0 +1,30 @@
+# .briefcaseignore
+
+# Ignore Git repo metadata
+.git
+.gitignore
+
+# Ignore Python caches and editor junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.DS_Store
+
+# Ignore test folders
+tests/
+logs/
+*.log
+
+# Ignore Codemagic artifacts
+codemagic.yaml
+*.apk
+
+# Ignore build scripts and extras
+*.sh
+*.zip
+*.tar
+*.tar.gz
+*.bak
